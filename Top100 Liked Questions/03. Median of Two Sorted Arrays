@@ -1,0 +1,16 @@
+class Solution:
+    def findMedianSortedArrays(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: float
+        """
+        nums= sorted(nums1+nums2)
+        length = len(nums)
+        median = length//2
+        remainder = length%2
+        
+        if remainder == 0:
+            return (nums[median-1]+nums[median])/2
+        else:
+            return nums[median]   
